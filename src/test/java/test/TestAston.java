@@ -1,78 +1,103 @@
 package test;
 
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
+import static io.qameta.allure.Allure.step;
 
 public class TestAston extends TestBase {
+
+    @Owner("aemelyanova")
+    @Severity(SeverityLevel.CRITICAL)
     @Test
     @DisplayName("Проверка заголовка страницы при выборе стека 'Java' в разделе 'Технологии'")
+    @Tag("header")
     void checkHeaderWhenStackIsSelected() {
+        step("Открыть сайт на главной странице", () -> {
+            astonPage.openPage();
+        });
 
-        //Открыть главную страницу сайта и подтвердить куки
-        astonPage.openPage();
-        astonPage.acceptCookies();
+        step("Подтвердить cookie", () -> {
+            astonPage.acceptCookies();
+        });
 
-        //Навести мышку на Технологии
-        astonPage.hoverTechnologyButton();
+        step("Оставить положение страницы неизменной после подтверждения cookie", () -> {
+            fillFormPage.scrollHeaderModule(true);
+        });
 
-        //Выбрать раздел Java
-        astonPage.clickTechnologyJava("Java");
+        step("Навести мышку на 'Технологии'", () -> {
+            astonPage.hoverTechnologyButton();
+        });
 
-        //Проверить заголовок страницы "Java-разработка"
-        astonPage.checkHeaderJava("Java-разработка");
+        step("Выбрать раздел 'Java'", () -> {
+            astonPage.clickTechnologyJava("Java");
+        });
+
+        step("Проверить заголовок страницы 'Java-разработка'", () -> {
+            astonPage.checkHeaderJava("Java-разработка");
+        });
     }
 
-
+    @Owner("aemelyanova")
+    @Severity(SeverityLevel.CRITICAL)
     @Test
     @DisplayName("Поиск несуществующего текста в разделе 'Стажировка в Aston'")
+    @Tag("non exist")
     void searchForNonExistentText() {
 
-        //Открыть главную страницу сайта и подтвердить куки
-        astonPage.openPage();
-        astonPage.acceptCookies();
+        step("Открыть сайт на главной странице", () -> {
+            astonPage.openPage();
+        });
 
-        //найти и проверить заголовок "по вопросам стажировки"
-        astonPage.checkTitleInternship("по вопросам стажировки");
+        step("Подтвердить cookie", () -> {
+            astonPage.acceptCookies();
+        });
 
-        // кликнуть на "стажировка в астон"\
-        astonPage.clickInternship();
+        step("Найти и проверить заголовок 'по вопросам стажировки'", () -> {
+            astonPage.checkTitleInternship("по вопросам стажировки");
+        });
 
-        // на новой открывшейся странице проверить несуществующий текст "Стажировка в McDonald's"
-        astonPage.checkingNonExistentText("Стажировка в McDonald's");
+        step("Кликнуть на 'Стажировка в Aston'", () -> {
+            astonPage.clickInternship();
+        });
+
+        step("На новой открывшейся странице проверить несуществующий текст 'Стажировка в McDonald's'", () -> {
+            astonPage.checkingNonExistentText("Стажировка в McDonald's");
+        });
     }
 
-
+    @Owner("aemelyanova")
+    @Severity(SeverityLevel.CRITICAL)
     @Test
     @DisplayName("Доступность вкладки 'QA аудит' из раздела 'Контроль качества ПО'")
+    @Tag("qa")
     void checkQaAuditTab() {
-        //Открыть главную страницу сайта и подтвердить куки
-       // astonPage.openPage();
-     open("https://astondevs.ru/");
-        astonPage.acceptCookies();
+        step("Открыть сайт на главной странице", () -> {
+            astonPage.openPage();
+        });
 
-//        //потдвердить куки
-//        $(".CookiesPolicy-module--button--JZrW1").click();
+        step("Подтвердить cookie", () -> {
+            astonPage.acceptCookies();
+        });
 
-        // Навести мышку на раздел услуги
-        astonPage.hoverServiceButton();
-       // $("[tabindex=Услуги]").hover();
+        step("Навести мышку на раздел 'Услуги'", () -> {
+            astonPage.hoverServiceButton();
+        });
 
-        // Кликнуть на Контроль качечества ПО
-        astonPage.clickQualityControl("Контроль качества ПО");
-        //$("#gatsby-focus-wrapper").$(byText("Контроль качества ПО")).click();
+        step("Кликнуть на 'Контроль качечества ПО'", () -> {
+            astonPage.clickQualityControl("Контроль качества ПО");
+        });
 
-        // На окрывшейся странице нажать на QA аудит
-        astonPage.clickQaAudit();
-//        $("#page-interlinking-tab-1").click();
+        step("На окрывшейся странице кликнуть на 'QA аудит'", () -> {
+            astonPage.clickQaAudit();
+        });
 
-        // проверить текст "Услуга нужна, чтобы оценить эффективность процессов"
-        astonPage.checkTitleQaAudit("Услуга нужна, чтобы оценить эффективность процессов");
-      //  $("#page-interlinking-panel-1").shouldHave(text("Услуга нужна, чтобы оценить эффективность процессов"));
-        sleep(4000);
-
-
+        step("Проверить текст 'Услуга нужна, чтобы оценить эффективность процессов'", () -> {
+            astonPage.checkTitleQaAudit("Услуга нужна, чтобы оценить эффективность процессов");
+        });
     }
 }

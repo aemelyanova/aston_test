@@ -15,7 +15,7 @@ public class AstonPage {
             headerJava = $("#intro"),
             titleInternship = $(".Footer-module--contactUs--6nPqr"),
             pageInternship = $("#___gatsby"),
-            servicesButton = $("[tabindex=Услуги]").hover(),
+            servicesButton = $("[tabindex=Услуги]"),
             serviceQa = $("#gatsby-focus-wrapper"),
             qaAudit = $("#page-interlinking-tab-1"),
             descriptionQaAudit = $("#page-interlinking-panel-1");
