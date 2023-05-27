@@ -27,7 +27,6 @@ public class AstonPage {
 
     public AstonPage openPage() {
         open("https://astondevs.ru/");
-       // open("https://astondevs.ru/");
 
         return this;
     }

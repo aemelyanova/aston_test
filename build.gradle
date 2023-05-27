@@ -37,9 +37,49 @@ dependencies {
                        "com.github.javafaker:javafaker:1.0.2",
                        "io.qameta.allure:allure-selenide:$allureVersion",
                        "org.slf4j:slf4j-simple:$slf4jVersion"
+}
 
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
 }
 
 test {
     useJUnitPlatform()
+}
+
+task assembly_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("assembly")
+    }
+}
+task header_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("header")
+    }
+}
+task nonExist_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("non exist")
+    }
+}
+task qa_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("qa")
+    }
+}
+task form_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("form")
+    }
+}
+task param_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("param")
+    }
 }

@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
+@Tag("assembly")
 public class TestAston extends TestBase {
 
     @Owner("aemelyanova")
