@@ -21,9 +21,9 @@ public class TestAston extends TestBase {
             astonPage.openPage();
         });
 
-        step("Подтвердить cookie", () -> {
-            astonPage.acceptCookies();
-        });
+//        step("Подтвердить cookie", () -> {
+//            astonPage.acceptCookies();
+//        });
 
         step("Оставить положение страницы неизменной после подтверждения cookie", () -> {
             fillFormPage.scrollHeaderModule(true);
@@ -53,9 +53,9 @@ public class TestAston extends TestBase {
             astonPage.openPage();
         });
 
-        step("Подтвердить cookie", () -> {
-            astonPage.acceptCookies();
-        });
+//        step("Подтвердить cookie", () -> {
+//            astonPage.acceptCookies();
+//        });
 
         step("Найти и проверить заголовок 'по вопросам стажировки'", () -> {
             astonPage.checkTitleInternship("по вопросам стажировки");
@@ -80,9 +80,9 @@ public class TestAston extends TestBase {
             astonPage.openPage();
         });
 
-        step("Подтвердить cookie", () -> {
-            astonPage.acceptCookies();
-        });
+//        step("Подтвердить cookie", () -> {
+//            astonPage.acceptCookies();
+//        });
 
         step("Навести мышку на раздел 'Услуги'", () -> {
             astonPage.hoverServiceButton();
