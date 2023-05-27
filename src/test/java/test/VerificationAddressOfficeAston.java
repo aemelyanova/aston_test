@@ -36,9 +36,9 @@ public class VerificationAddressOfficeAston extends TestBase {
 //        verificationAddressPage.checkHeaderOffice("Главные офисы");
 //        });
 
-        step("Скролл до раздела сайта 'Офисы'", () -> {
-        verificationAddressPage.scrollToSectionOffice(true);
-        });
+//        step("Скролл до раздела сайта 'Офисы'", () -> {
+//        verificationAddressPage.scrollToSectionOffice(true);
+//        });
 
         step("При нажатии на 'Город' показывается на карте 'Адрес'", () -> {
         verificationAddressPage.choiceHeadOffice(city);

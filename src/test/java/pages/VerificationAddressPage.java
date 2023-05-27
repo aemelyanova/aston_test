@@ -25,11 +25,11 @@ public class VerificationAddressPage {
 //
 //        return this;
 //    }
-    public VerificationAddressPage scrollToSectionOffice(Boolean value){
-        selectCity.scrollIntoView(value);
-
-        return this;
-    }
+//    public VerificationAddressPage scrollToSectionOffice(Boolean value){
+//        selectCity.scrollIntoView(value);
+//
+//        return this;
+//    }
 
     public VerificationAddressPage choiceHeadOffice(String value) {
         selectCity.$(byText(value)).click();
