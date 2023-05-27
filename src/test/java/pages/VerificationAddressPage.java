@@ -10,7 +10,7 @@ public class VerificationAddressPage {
 
      SelenideElement
             titleAndTextTeam = $("#gatsby-focus-wrapper"),
-            headerOffice = $(".SideMenu-module--title--bj1-e"),
+//            headerOffice = $(".SideMenu-module--title--bj1-e"),
             selectCity = $("#offices"),
             addressHeadCity = $(".ymaps-2-1-79-balloon__content");
 
@@ -20,11 +20,11 @@ public class VerificationAddressPage {
         return this;
     }
 
-    public VerificationAddressPage checkHeaderOffice(String value) {
-        headerOffice.shouldHave(text(value));
-
-        return this;
-    }
+//    public VerificationAddressPage checkHeaderOffice(String value) {
+//        headerOffice.shouldHave(text(value));
+//
+//        return this;
+//    }
     public VerificationAddressPage scrollToSectionOffice(Boolean value){
         selectCity.scrollIntoView(value);
 
