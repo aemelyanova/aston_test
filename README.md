@@ -70,6 +70,12 @@ clean aston_test
 -Dremote=${REMOTE}"
 ```
 
+## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/aemelyanova_aston_test/)</a>
+____
+<p align="center">  
+<a href="https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/"><img src="images/screen/jenkins_dashboard.png" alt="Jenkins" width="950"/></a>  
+</p>
+
 #### Параметры сборки
 
 * <code>BROWSER</code> – браузер, в котором будут выполняться тесты. По-умолчанию - <code>chrome</code>
