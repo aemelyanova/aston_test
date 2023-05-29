@@ -83,3 +83,25 @@ ____
 * <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты. По-умолчанию - <code>"1980x1080"</code>
 * <code>BASE_URL</code> – Url, по которому будет открываться тестируемое приложение. По-умолчанию - <code>https://astondevs.ru</code>.
 * <code>REMOTE_BROWSER_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
+
+## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/aemelyanova_aston_test/18/allure/)</a>
+___
+
+### *Основная страница отчёта*
+
+<p align="center">  
+<img title="Allure Overview Dashboard" src="images/screen/jenkins_overview.png" width="850">  
+</p>  
+
+### *Тест-кейсы*
+
+<p align="center">  
+<img title="Allure Tests" src="images/screen/allure_tests.png" width="850">  
+</p>
+
+### *Графики*
+
+  <p align="center">  
+<img title="Allure Graphics" src="images/screen/allure_graths.bmp" width="850">  
+<img title="Allure Graphics" src="images/screen/graphs.png" width="850">  
+</p>

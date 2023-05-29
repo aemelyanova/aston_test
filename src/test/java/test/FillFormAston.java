@@ -28,9 +28,9 @@ public class FillFormAston extends TestBase {
             astonPage.openPage();
         });
 
-        step("Подтвердить cookie", () -> {
-        astonPage.acceptCookies();
-        });
+//        step("Подтвердить cookie", () -> {
+//        astonPage.acceptCookies();
+//        });
 
         step("Оставить положение страницы неизменной после подтверждения cookie", () -> {
         fillFormPage.scrollHeaderModule(true);

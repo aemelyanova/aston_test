@@ -33,13 +33,13 @@ public class VerificationAddressOfficeAston extends TestBase {
         verificationAddressPage.clickButtonCompany("Компания");
         });
 
-//        step("Проверить наличие заголовка 'Главные офисы'", () -> {
-//        verificationAddressPage.checkHeaderOffice("Главные офисы");
-//        });
+        step("Проверить наличие заголовка 'Главные офисы'", () -> {
+        verificationAddressPage.checkHeaderOffice("Главные офисы");
+        });
 
-//        step("Скролл до раздела сайта 'Офисы'", () -> {
-//        verificationAddressPage.scrollToSectionOffice(true);
-//        });
+        step("Скролл до раздела сайта 'Офисы'", () -> {
+        verificationAddressPage.scrollToSectionOffice(true);
+        });
 
         step("При нажатии на 'Город' показывается на карте 'Адрес'", () -> {
         verificationAddressPage.choiceHeadOffice(city);
