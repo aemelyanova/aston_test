@@ -1,9 +1,8 @@
 
 # Проект по автоматизации тестирования для компании [Aston](https://astondevs.ru/)
 
-
-<img title="Aston logo" src="images/screen/jenkins_overview.png" width="300" height="66">  
-
+ 
+<img src="images/logo/aston_logo.svg" width="300" height="66">
 
 > Компания Aston представлена на российском рынке с 2007 года, предоставляя услуги разработки программного обеспечения и IT-аутсорса предприятиям, организациям и стартапам.
 
