@@ -5,6 +5,7 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -18,7 +19,7 @@ public class VerificationAddressOfficeAston extends TestBase {
     @CsvFileSource(resources = "/testData.csv")
     @ParameterizedTest(name = "В городе {0} адрес офиса: {1}")
     @DisplayName("При выборе города в разделе 'Главные офисы', отображается корректный адрес на карте. ")
-    @Tag("param")
+    @Tags({@Tag("main"), @Tag("aston")})
 
     void searchForFullNameOfProductInSearchSite(
             String city,

@@ -53,6 +53,11 @@ test {
     useJUnitPlatform()
 }
 
+task aston_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("aston")
+    }
+}
 task assembly_test(type: Test) {
     useJUnitPlatform {
         includeTags("assembly")
