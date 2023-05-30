@@ -70,7 +70,7 @@ task header_test(type: Test) {
 }
 task nonExist_test(type: Test) {
     useJUnitPlatform {
-        includeTags("non exist")
+        includeTags("nonExist")
     }
 }
 task qa_test(type: Test) {

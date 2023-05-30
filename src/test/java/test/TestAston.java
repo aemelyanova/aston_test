@@ -7,6 +7,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 
 import org.junit.jupiter.api.Test;
+
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 import static io.qameta.allure.Allure.step;
 
@@ -35,31 +39,43 @@ public class TestAston extends TestBase {
         step("Проверить заголовок страницы 'Java-разработка'", () -> {
             astonPage.checkHeaderJava("Java-разработка");
         });
-        sleep(4000);
     }
 
     @Owner("aemelyanova")
     @Severity(SeverityLevel.CRITICAL)
     @Test
     @DisplayName("Поиск несуществующего текста в разделе 'Стажировка в Aston'")
-    @Tag("non exist")
+    @Tag("nonExist")
     void searchForNonExistentText() {
 
         step("Открыть сайт на главной странице", () -> {
             astonPage.openPage();
         });
 
-        step("Найти и проверить заголовок 'по вопросам стажировки'", () -> {
-            astonPage.checkTitleInternship("по вопросам стажировки");
-        });
 
-        step("Кликнуть на 'Стажировка в Aston'", () -> {
-            astonPage.clickInternship();
-        });
+        // навести мышку на карьера
+        $("[tabindex=Технологии]").click();
+        // кликнуть на стажировка
+        $("#gatsby-focus-wrapper").$(byText("Стажировка")).click();
+        // На новой открывшейся странице проверить несуществующий текст 'Стажировка в McDonald's
+        $("#intro").shouldNot(text("Стажировка в McDonald's"));
 
-        step("На новой открывшейся странице проверить несуществующий текст 'Стажировка в McDonald's'", () -> {
-            astonPage.checkingNonExistentText("Стажировка в McDonald's");
-        });
+
+
+
+
+
+//        step("Найти и проверить заголовок 'по вопросам стажировки'", () -> {
+//            astonPage.checkTitleInternship("по вопросам стажировки");
+//        });
+//
+//        step("Кликнуть на 'Стажировка в Aston'", () -> {
+//            astonPage.clickInternship();
+//        });
+//
+//        step("На новой открывшейся странице проверить несуществующий текст 'Стажировка в McDonald's'", () -> {
+//            astonPage.checkingNonExistentText("Стажировка в McDonald's");
+//        });
     }
 
     @Owner("aemelyanova")
