@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class AstonPage {
      SelenideElement
-            cookies = $(".CookiesPolicy-module--button--JZrW1"),
+ //           cookies = $(".CookiesPolicy-module--button--JZrW1"),
             technologyButton = $("[tabindex=Технологии]"),
             technologyJava = $(".SubMenu-module--left--R5vB-"),
             headerJava = $("#intro"),
@@ -30,11 +30,11 @@ public class AstonPage {
 
         return this;
     }
-    public AstonPage acceptCookies() {
-        cookies.click();
-
-        return this;
-    }
+//    public AstonPage acceptCookies() {
+//        cookies.click();
+//
+//        return this;
+//    }
     public AstonPage hoverTechnologyButton() {
         technologyButton.hover();
 

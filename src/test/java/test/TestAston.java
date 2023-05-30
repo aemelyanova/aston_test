@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 
 import org.junit.jupiter.api.Test;
-
+import static com.codeborne.selenide.Selenide.sleep;
 import static io.qameta.allure.Allure.step;
 
 @Tag("aston")
@@ -24,14 +24,6 @@ public class TestAston extends TestBase {
             astonPage.openPage();
         });
 
-//        step("Подтвердить cookie", () -> {
-//            astonPage.acceptCookies();
-//        });
-
-        step("Оставить положение страницы неизменной после подтверждения cookie", () -> {
-            fillFormPage.scrollHeaderModule(true);
-        });
-
         step("Навести мышку на 'Технологии'", () -> {
             astonPage.hoverTechnologyButton();
         });
@@ -43,6 +35,7 @@ public class TestAston extends TestBase {
         step("Проверить заголовок страницы 'Java-разработка'", () -> {
             astonPage.checkHeaderJava("Java-разработка");
         });
+        sleep(4000);
     }
 
     @Owner("aemelyanova")
@@ -55,10 +48,6 @@ public class TestAston extends TestBase {
         step("Открыть сайт на главной странице", () -> {
             astonPage.openPage();
         });
-
-//        step("Подтвердить cookie", () -> {
-//            astonPage.acceptCookies();
-//        });
 
         step("Найти и проверить заголовок 'по вопросам стажировки'", () -> {
             astonPage.checkTitleInternship("по вопросам стажировки");
@@ -82,10 +71,6 @@ public class TestAston extends TestBase {
         step("Открыть сайт на главной странице", () -> {
             astonPage.openPage();
         });
-
-//        step("Подтвердить cookie", () -> {
-//            astonPage.acceptCookies();
-//        });
 
         step("Навести мышку на раздел 'Услуги'", () -> {
             astonPage.hoverServiceButton();

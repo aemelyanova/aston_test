@@ -28,13 +28,13 @@ public class FillFormAston extends TestBase {
             astonPage.openPage();
         });
 
-        step("Подтвердить cookie", () -> {
-        astonPage.acceptCookies();
-        });
-
-        step("Оставить положение страницы неизменной после подтверждения cookie", () -> {
-        fillFormPage.scrollHeaderModule(true);
-        });
+//        step("Подтвердить cookie", () -> {
+//        astonPage.acceptCookies();
+//        });
+//
+//        step("Оставить положение страницы неизменной после подтверждения cookie", () -> {
+//        fillFormPage.scrollHeaderModule(true);
+//        });
 
         step("Навести мышку на раздел услуги", () -> {
         fillFormPage.hoverService();
