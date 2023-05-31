@@ -109,7 +109,7 @@ ___
 
 ___
 
-## <img alt="Allure_TO" height="25" src="images/logo/Allure2.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/2489/dashboards">Allure TestOps</a>
+## <img alt="Allure_TO" height="25" src="images/logo/Allure_TO.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/2489/dashboards">Allure TestOps</a>
 ____
 ### *Allure TestOps Dashboard*
 
@@ -130,3 +130,24 @@ ____
 </p>
 
 ___
+
+## <img alt="Allure" height="25" src="images/logo/Jira.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-724">Jira</a>
+____
+<p align="center">  
+<img title="Jira" src="images/screen/jira.png" width="">  
+</p>
+
+____
+## <img alt="Allure" height="25" src="images/logo/Telegram.svg" width="25"/></a> Уведомление в Telegram при помощи бота
+____
+<p align="center">  
+<img title="Allure Overview Dashboard" src="images/screen/tg_bot.png" width="550">  
+</p>
+
+____
+## <img alt="Selenoid" height="25" src="images/logo/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
+____
+<p align="center">
+<img title="Selenoid Video" src="images/video/selenoid.mp4" width="550" height="350"  alt="video">   
+</p>
+____
