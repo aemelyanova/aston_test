@@ -8,7 +8,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
-
 import static io.qameta.allure.Allure.step;
 
 
@@ -28,7 +27,7 @@ public class FillFormAston extends TestBase {
             astonPage.openPage();
         });
 
-        step("Навести мышку на раздел услуги", () -> {
+        step("Навести мышку на раздел 'Услуги'", () -> {
            fillFormPage.hoverService();
        });
 
@@ -67,7 +66,13 @@ public class FillFormAston extends TestBase {
 
 
 
-
+////        step("Навести мышку на раздел услуги", () -> {
+//        $("[tabindex=Услуги]").hover();
+////            fillFormPage.hoverService();
+////        });
+////
+////        step("Кликнуть на 'Выделенная команда'", () -> {
+//        $("#gatsby-focus-wrapper").$(byText("Выделенная команда")).click();
 
 
 
