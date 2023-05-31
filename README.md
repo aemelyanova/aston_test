@@ -73,8 +73,9 @@ clean aston_test
 ## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/aemelyanova_aston_test/)</a>
 ____
 <p align="center">  
-<a href="https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/"><img src="images/screen/jenkins_dashboard.png" alt="Jenkins" width="950"/></a>  
+<a href="https://jenkins.autotests.cloud/job/a_emelyanova_aston_tests/"><img src="images/screen/jenkins_dashboard.png" alt="Jenkins" width="950"/></a>  
 </p>
+
 
 #### Параметры сборки
 
@@ -90,18 +91,18 @@ ___
 ### *Основная страница отчёта*
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="images/screen/jenkins_overview.png" width="850">  
+<img title="Allure Overview Dashboard" src="images/screen/allure_dashboard.png" width="850">  
 </p>  
 
 ### *Тест-кейсы*
 
 <p align="center">  
-<img title="Allure Tests" src="images/screen/allure_tests.png" width="850">  
+<img title="Allure Tests" src="images/screen/allure_test_case.png" width="850">  
 </p>
 
 ### *Графики*
 
   <p align="center">  
-<img title="Allure Graphics" src="images/screen/allure_graths.bmp" width="850">  
-<img title="Allure Graphics" src="images/screen/graphs.png" width="850">  
+<img title="Allure Graphics" src="images/screen/allure_graphs.bmp" width="850">  
+<img title="Allure Graphics" src="images/screen/graphs_graphs1.png" width="850">  
 </p>
