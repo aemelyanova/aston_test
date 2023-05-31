@@ -20,7 +20,6 @@ public class VerificationAddressOfficeAston extends TestBase {
     @ParameterizedTest(name = "В городе {0} адрес офиса: {1}")
     @DisplayName("При выборе города в разделе 'Главные офисы', отображается корректный адрес на карте. ")
     @Tags({@Tag("param"), @Tag("aston")})
-
     void searchForFullNameOfProductInSearchSite(
             String city,
             String address
@@ -30,20 +29,20 @@ public class VerificationAddressOfficeAston extends TestBase {
         });
 
         step("Кликнуть на кнопку 'Компания'", () -> {
-        verificationAddressPage.clickButtonCompany("Компания");
+            verificationAddressPage.clickButtonCompany("Компания");
         });
 
         step("Проверить наличие заголовка 'Главные офисы'", () -> {
-        verificationAddressPage.checkHeaderOffice("Главные офисы");
+            verificationAddressPage.checkHeaderOffice("Главные офисы");
         });
 
         step("Скролл до раздела сайта 'Офисы'", () -> {
-        verificationAddressPage.scrollToSectionOffice(true);
+            verificationAddressPage.scrollToSectionOffice(true);
         });
 
         step("При нажатии на 'Город' показывается на карте 'Адрес'", () -> {
-        verificationAddressPage.choiceHeadOffice(city);
-        verificationAddressPage.checkCorrectAddress(address);
+            verificationAddressPage.choiceHeadOffice(city);
+            verificationAddressPage.checkCorrectAddress(address);
         });
 
     }

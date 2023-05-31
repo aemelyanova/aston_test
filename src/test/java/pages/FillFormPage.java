@@ -1,6 +1,5 @@
 package pages;
 
-
 import com.codeborne.selenide.SelenideElement;
 import data.SoftwareSolution;
 
@@ -10,94 +9,69 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class FillFormPage {
-     SelenideElement
-         //   headerModule = $("#gatsby-focus-wrapper"),
-         //   sectionService = $("[tabindex=Услуги]"),
+    SelenideElement
+
             titleAndTextTeam = $(byTagAndText("a", "Выделенная команда")),
             sectionIndustryBusiness = $(byTagAndText("p", "Выберите отрасль бизнеса, наиболее подходящую для вашего проекта")),
             sectionSoftwareSolution = $(byTagAndText("p", "Какой тип программного решения вы хотели бы разработать?")),
-        //    formHeaderCostEstimate = $(".Calculator-module--wrapper--gk5WR"),
-            businessSector = $(".DesktopSection-module--wrapper--FmE-w"),///
+            sectorForm = $(".DesktopSection-module--wrapper--FmE-w"),
             popupWindow = $(".CloseButton-module--closeIcon--wOdet"),
-        //    scrollToForm = $(".DesktopSection-module--footer--Upcr5"), //
-            scrollToEndForm = $(byTagAndText("p", "Укажите приблизительную продолжительность вашего проекта")),//
-            checkboxSoftwareSolution = $(".DesktopSection-module--wrapper--FmE-w"),///
+            scrollToEndForm = $(byTagAndText("p", "Укажите приблизительную продолжительность вашего проекта")),
             buttonSeePrice = $(byTagAndText("button", "Узнать стоимость")),
             headerResultModal = $(".ResultModal-module--layout--yBGoY"),
             dataResultModal = $(".TagsLayout-module--elements--WDaBi");
 
-
-//    public FillFormPage scrollHeaderModule(Boolean value) {
-//        headerModule.scrollIntoView(value);
-//
-//        return this;
-//    }
-//
-//    public FillFormPage hoverService() {
-//        sectionService.hover();
-//
-//        return this;
-//    }
 
     public FillFormPage clickAndCheckTextTeam() {
         titleAndTextTeam.click();
 
         return this;
     }
+
     public FillFormPage scrollSectionIndustryBusiness(Boolean value) {
         sectionIndustryBusiness.scrollIntoView(value);
 
         return this;
     }
 
-//    public FillFormPage checkFormHeader(String value) {
-//        formHeaderCostEstimate.shouldHave(text(value));
-//
-//        return this;
-//    }
-
     public FillFormPage chooseBusinessSector(String value) {
-        businessSector.$(byText(value)).click();
+        sectorForm.$(byText(value)).click();
 
         return this;
     }
-
 
     public FillFormPage closePopupWindow() {
         popupWindow.click();
 
         return this;
     }
+
     public FillFormPage scrollSectionSoftwareSolution(Boolean value) {
         sectionSoftwareSolution.scrollIntoView(value);
 
         return this;
     }
 
-//    public FillFormPage scrollToFormBlock(Boolean value) {
-//        scrollToForm.scrollIntoView(value);
-//
-//        return this;
-//    }
-
     public FillFormPage chooseTypeOfSoftwareSolution(SoftwareSolution value) {
-        checkboxSoftwareSolution.$(byText(value.toString())).click();
+        sectorForm.$(byText(value.toString())).click();
 
         return this;
     }
+
     public FillFormPage scrollToEndOfForm(Boolean value) {
         scrollToEndForm.scrollIntoView(value);
 
         return this;
     }
+
     public FillFormPage clickToSeePrice() {
         buttonSeePrice.click();
 
         return this;
     }
+
     public FillFormPage checkResultModalHeader(String value) {
         headerResultModal.shouldHave(text(value));
-
 
         return this;
     }
@@ -107,6 +81,7 @@ public class FillFormPage {
 
         return this;
     }
+
     public FillFormPage checkDataSoftwareSolutionResultModal(String value) {
         dataResultModal.shouldHave(text(value));
 
