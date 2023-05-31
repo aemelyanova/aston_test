@@ -1,5 +1,6 @@
 package test;
 
+import com.codeborne.selenide.Condition;
 import data.SoftwareSolution;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Selenide.$;
 import static io.qameta.allure.Allure.step;
 
 
@@ -27,6 +29,9 @@ public class FillFormAston extends TestBase {
         step("Открыть сайт на главной странице", () -> {
             astonPage.openPage();
         });
+
+        //проверить заголвок
+        $(".TitleWith-module--container--EFW0t").shouldHave(Condition.text("ИТ-решения для развития бизнеса"));
 
         step("Навести мышку на раздел 'Услуги'", () -> {
             astonPage.hoverServiceButton();
