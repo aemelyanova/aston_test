@@ -58,19 +58,15 @@ task aston_test(type: Test) {
         includeTags("aston")
     }
 }
-task assembly_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("assembly")
-    }
-}
+
 task header_test(type: Test) {
     useJUnitPlatform {
         includeTags("header")
     }
 }
-task nonExist_test(type: Test) {
+task internship_test(type: Test) {
     useJUnitPlatform {
-        includeTags("nonExist")
+        includeTags("internship")
     }
 }
 task qa_test(type: Test) {

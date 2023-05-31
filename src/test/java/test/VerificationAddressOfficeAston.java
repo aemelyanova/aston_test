@@ -19,7 +19,7 @@ public class VerificationAddressOfficeAston extends TestBase {
     @CsvFileSource(resources = "/testData.csv")
     @ParameterizedTest(name = "В городе {0} адрес офиса: {1}")
     @DisplayName("При выборе города в разделе 'Главные офисы', отображается корректный адрес на карте. ")
-    @Tags({@Tag("main"), @Tag("aston")})
+    @Tags({@Tag("param"), @Tag("aston")})
 
     void searchForFullNameOfProductInSearchSite(
             String city,
