@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class FillFormPage {
      SelenideElement
          //   headerModule = $("#gatsby-focus-wrapper"),
-            sectionService = $("[tabindex=Услуги]"),
+         //   sectionService = $("[tabindex=Услуги]"),
             titleAndTextTeam = $(byTagAndText("a", "Выделенная команда")),
             sectionIndustryBusiness = $(byTagAndText("p", "Выберите отрасль бизнеса, наиболее подходящую для вашего проекта")),
             sectionSoftwareSolution = $(byTagAndText("p", "Какой тип программного решения вы хотели бы разработать?")),
@@ -32,12 +32,12 @@ public class FillFormPage {
 //
 //        return this;
 //    }
-
-    public FillFormPage hoverService() {
-        sectionService.hover();
-
-        return this;
-    }
+//
+//    public FillFormPage hoverService() {
+//        sectionService.hover();
+//
+//        return this;
+//    }
 
     public FillFormPage clickAndCheckTextTeam() {
         titleAndTextTeam.click();
