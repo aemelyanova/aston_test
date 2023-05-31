@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static io.qameta.allure.Allure.step;
@@ -35,7 +36,9 @@ public class FillFormAston extends TestBase {
        });
 
         step("Кликнуть на 'Выделенная команда'", () -> {
-            fillFormPage.clickAndCheckTextTeam("Выделенная команда");
+            fillFormPage.clickAndCheckTextTeam();
+          //  $(byTagAndText("a", "Выделенная команда")).click();
+          //  fillFormPage.clickAndCheckTextTeam("Выделенная команда");
         });
 
         step("Скролл до раздела 'Выберите отрасль бизнеса'", () -> {

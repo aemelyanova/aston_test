@@ -13,7 +13,7 @@ public class FillFormPage {
      SelenideElement
          //   headerModule = $("#gatsby-focus-wrapper"),
             sectionService = $("[tabindex=Услуги]"),
-            titleAndTextTeam = $(".SubMenu-module--visible--joh99"),
+            titleAndTextTeam = $(byTagAndText("a", "Выделенная команда")),
             sectionIndustryBusiness = $(byTagAndText("p", "Выберите отрасль бизнеса, наиболее подходящую для вашего проекта")),
             sectionSoftwareSolution = $(byTagAndText("p", "Какой тип программного решения вы хотели бы разработать?")),
         //    formHeaderCostEstimate = $(".Calculator-module--wrapper--gk5WR"),
@@ -39,8 +39,8 @@ public class FillFormPage {
         return this;
     }
 
-    public FillFormPage clickAndCheckTextTeam(String value) {
-        titleAndTextTeam.$(byText(value)).click();
+    public FillFormPage clickAndCheckTextTeam() {
+        titleAndTextTeam.click();
 
         return this;
     }
