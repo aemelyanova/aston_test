@@ -8,9 +8,6 @@ import org.junit.jupiter.api.Tag;
 
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 @Tag("aston")
@@ -27,7 +24,7 @@ public class TestAston extends TestBase {
             astonPage.openPage();
         });
 
-        step("Навести мышку на 'Технологии'", () -> {
+        step("Навести мышку на раздел 'Технологии'", () -> {
             astonPage.hoverTechnologyButton();
         });
 
@@ -43,23 +40,46 @@ public class TestAston extends TestBase {
     @Owner("aemelyanova")
     @Severity(SeverityLevel.CRITICAL)
     @Test
-    @DisplayName("Поиск несуществующего текста в разделе 'Стажировка в Aston'")
-    @Tag("nonExist")
-    void searchForNonExistentText() {
+    @DisplayName("Проверка кликабельности кнопки 'Стажировка' в разделе 'Карьера'")
+    @Tag("internship")
+    void checkClickInternshipButton() {
 
         step("Открыть сайт на главной странице", () -> {
             astonPage.openPage();
         });
+        step("Навести мышку на раздел 'Карьера'", () -> {
+            astonPage.hoverCareerSection();
+        });
+        step("Кликнуть на 'Стажировка'", () -> {
+            astonPage.clickInternship("Стажировка");
+       });
+       step("На новой открывшейся странице проверить заголовок 'Стажировка в Aston'", () -> {
+           astonPage.checkingTextInternship("Стажировка в Aston");
+        });
+
+        //Проверка кликабельности кнопки "Стажировка" в разделе "Карьера"
+//        //открыть главную страницу
+//        open("https://astondevs.ru/");
+//        // навести мышку на карьера
+//        $("[tabindex=Карьера]").click();
+        // кликнуть на стажировка
+//        $("#gatsby-focus-wrapper").$(byText("Стажировка")).click();
+        // На новой открывшейся странице проверить несуществующий текст 'Стажировка в McDonald's
+//        $("#intro").shouldHave(text("Стажировка в Aston"));
+//
+//        step("Открыть сайт на главной странице", () -> {
+//            astonPage.openPage();
+//        });
 //////////////////////////////////////////////////////////////////////
         //Проверка кликабельности кнопки "Стажировка" в разделе "Карьера"
         //открыть главную страницу
-        open("https://astondevs.ru/");
-        // навести мышку на карьера
-        $("[tabindex=Карьера]").click();
-        // кликнуть на стажировка
-        $("#gatsby-focus-wrapper").$(byText("Стажировка")).click();
-        // На новой открывшейся странице проверить несуществующий текст 'Стажировка в McDonald's
-        $("#intro").shouldHave(text("Стажировка в Aston"));
+//        open("https://astondevs.ru/");
+//        // навести мышку на карьера
+//        $("[tabindex=Карьера]").click();
+//        // кликнуть на стажировка
+//        $("#gatsby-focus-wrapper").$(byText("Стажировка")).click();
+//        // На новой открывшейся странице проверить несуществующий текст 'Стажировка в McDonald's
+//        $("#intro").shouldHave(text("Стажировка в Aston"));
 //////////////////////////////////////////////////////////////////////////
 
 //        // навести мышку на карьера
@@ -104,6 +124,9 @@ public class TestAston extends TestBase {
         step("Кликнуть на 'Контроль качества ПО'", () -> {
             astonPage.clickQualityControl("Контроль качества ПО");
         });
+        step("Скролл до раздела 'Наши услуги'", () -> {
+            astonPage.scrollOurServicesSection(true);
+        });
 
         step("На окрывшейся странице кликнуть на 'QA аудит'", () -> {
             astonPage.clickQaAudit();
@@ -112,5 +135,20 @@ public class TestAston extends TestBase {
         step("Проверить текст 'Услуга нужна, чтобы оценить эффективность процессов'", () -> {
             astonPage.checkTitleQaAudit("Услуга нужна, чтобы оценить эффективность процессов");
         });
-    }
+
+//        open("https://astondevs.ru/");
+        // "Навести мышку на раздел 'Услуги'"
+//        $("[tabindex=Услуги]").click();
+//        // кликнуть на стажировка
+//        $("#gatsby-focus-wrapper").$(byText("Контроль качества ПО")).click();
+//
+//        //скрол до раздела наши услуги
+////        $(byTagAndText("h2", "Наши услуги")).scrollIntoView(true);
+//
+//        //кликнуть на QA-аудит
+//        $("#page-interlinking-tab-1").click();;
+//
+//        //"Проверить текст 'Услуга нужна, чтобы оценить эффективность процессов'"
+//        $("#page-interlinking-panel-1").shouldHave(text("Услуга нужна, чтобы оценить эффективность процессов"));
+   }
 }
