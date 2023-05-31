@@ -10,8 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 @Tag("aston")
@@ -51,14 +50,24 @@ public class TestAston extends TestBase {
         step("Открыть сайт на главной странице", () -> {
             astonPage.openPage();
         });
-
-
+//////////////////////////////////////////////////////////////////////
+        //Проверка кликабельности кнопки "Стажировка" в разделе "Карьера"
+        //открыть главную страницу
+        open("https://astondevs.ru/");
         // навести мышку на карьера
-        $("[tabindex=Технологии]").click();
+        $("[tabindex=Карьера]").click();
         // кликнуть на стажировка
         $("#gatsby-focus-wrapper").$(byText("Стажировка")).click();
         // На новой открывшейся странице проверить несуществующий текст 'Стажировка в McDonald's
-        $("#intro").shouldNot(text("Стажировка в McDonald's"));
+        $("#intro").shouldHave(text("Стажировка в Aston"));
+//////////////////////////////////////////////////////////////////////////
+
+//        // навести мышку на карьера
+//        $("[tabindex=Технологии]").click();
+//        // кликнуть на стажировка
+//        $("#gatsby-focus-wrapper").$(byText("Стажировка")).click();
+//        // На новой открывшейся странице проверить несуществующий текст 'Стажировка в McDonald's
+//        $("#intro").shouldNot(text("Стажировка в McDonald's"));
 
 
 
@@ -92,7 +101,7 @@ public class TestAston extends TestBase {
             astonPage.hoverServiceButton();
         });
 
-        step("Кликнуть на 'Контроль качечества ПО'", () -> {
+        step("Кликнуть на 'Контроль качества ПО'", () -> {
             astonPage.clickQualityControl("Контроль качества ПО");
         });
 

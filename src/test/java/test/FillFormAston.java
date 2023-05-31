@@ -9,6 +9,10 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byTagAndText;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
 import static io.qameta.allure.Allure.step;
 
 
@@ -28,33 +32,80 @@ public class FillFormAston extends TestBase {
             astonPage.openPage();
         });
 
-//        step("Подтвердить cookie", () -> {
-//        astonPage.acceptCookies();
-//        });
-//
-//        step("Оставить положение страницы неизменной после подтверждения cookie", () -> {
-//        fillFormPage.scrollHeaderModule(true);
-//        });
-
         step("Навести мышку на раздел услуги", () -> {
-        fillFormPage.hoverService();
-        });
+           fillFormPage.hoverService();
+       });
 
         step("Кликнуть на 'Выделенная команда'", () -> {
-        fillFormPage.clickAndCheckTextTeam("Выделенная команда");
+            fillFormPage.clickAndCheckTextTeam("Выделенная команда");
         });
 
-        step("Проверить заголовок формы 'Запросить оценку стоимости выделенной команды'", () -> {
-        fillFormPage.checkFormHeader("Запросить оценку стоимости выделенной команды");
+        step("Скролл до раздела 'Выберите отрасль бизнеса'", () -> {
+            fillFormPage.scrollSectionIndustryBusiness(true);
         });
+        step("Выбор отрали бизнеса", () -> {
+            fillFormPage.chooseBusinessSector(industry);
+        });
+        step("Закрыть всплывающее окно формы", () -> {
+            fillFormPage.closePopupWindow();
+        });
+        step("Скролл до раздела 'Какой тип программного решения вы хотели бы разработать?'", () -> {
+            fillFormPage.scrollSectionSoftwareSolution(true);
+        });
+
+
+
+        // скрол до раздела "Какой тип программного решения вы хотели бы разработать?"
+        $(byTagAndText("p", "Какой тип программного решения вы хотели бы разработать?")).scrollIntoView(true);
+
+        //"Выбрать тип программного решения"
+        $(".DesktopSection-module--wrapper--FmE-w").$(byText(softwareSolution.toString())).click();
+
+        //"Скролл до 3 блока формы"
+        $(byTagAndText("p", "Укажите приблизительную продолжительность вашего проекта")).scrollIntoView(true);
+
+        //Нажать кнопку 'Узнать стоимость'
+        $(byTagAndText("button", "Узнать стоимость")).click();
+
+        //"Проверка формы. Заголовок 'Чтобы получить ценовое предложение'"
+        $(".ResultModal-module--layout--yBGoY").shouldHave(text("Чтобы получить ценовое предложение"));
+
+        //"Проверка формы. Отображение введённых данных"
+        $(".TagsLayout-module--elements--WDaBi").shouldHave(text(industry));
+        $(".TagsLayout-module--elements--WDaBi").shouldHave(text(softwareSolution.toString()));
+
+        // скрол до раздела "Выберите отрасль бизнеса, наиболее подходящую для вашего проекта"
+        // $("#calculator").scrollIntoView(true);
+      //  $(byTagAndText("p", "Выберите отрасль бизнеса, наиболее подходящую для вашего проекта")).scrollIntoView(true);
+
+//        step("Навести мышку на раздел услуги", () -> {
+//        fillFormPage.hoverService();
+//        });
+
+
+//
+//        //"Закрыть всплывающее окно формы"
+//        $(".CloseButton-module--closeIcon--wOdet").click();
+
+        //Выбор отрали бизнеса
+       // $(".DesktopSection-module--wrapper--FmE-w").$(byText(industry)).click();
+
+//        step("Кликнуть на 'Выделенная команда'", () -> {
+//        fillFormPage.clickAndCheckTextTeam("Выделенная команда");
+//        });
+
+        // скрол до раздела "Какой тип программного решения вы хотели бы разработать?"
+//        $(byTagAndText("p", "Какой тип программного решения вы хотели бы разработать?")).scrollIntoView(true);
+//
+//        step("Проверить заголовок формы 'Запросить оценку стоимости выделенной команды'", () -> {
+//        fillFormPage.checkFormHeader("Запросить оценку стоимости выделенной команды");
+//        });
 
         step("Выбор отрали бизнеса", () -> {
         fillFormPage.chooseBusinessSector(industry);
         });
 
-        step("Закрыть всплывающее окно формы", () -> {
-        fillFormPage.closePopupWindow();
-        });
+
 
         step("Скролл до 2 блока формы", () -> {
         fillFormPage.scrollToFormBlock(false);

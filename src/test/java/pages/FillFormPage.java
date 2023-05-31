@@ -5,6 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import data.SoftwareSolution;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -13,6 +14,8 @@ public class FillFormPage {
             headerModule = $("#gatsby-focus-wrapper"),
             sectionService = $("[tabindex=Услуги]"),
             titleAndTextTeam = $("#gatsby-focus-wrapper"),
+            sectionIndustryBusiness = $(byTagAndText("p", "Выберите отрасль бизнеса, наиболее подходящую для вашего проекта")),
+    sectionSoftwareSolution = $(byTagAndText("p", "Какой тип программного решения вы хотели бы разработать?")),
             formHeaderCostEstimate = $(".Calculator-module--wrapper--gk5WR"),
             businessSector = $(".DesktopSection-module--wrapper--FmE-w"),///
             popupWindow = $(".CloseButton-module--closeIcon--wOdet"),
@@ -41,6 +44,11 @@ public class FillFormPage {
 
         return this;
     }
+    public FillFormPage scrollSectionIndustryBusiness(Boolean value) {
+        sectionIndustryBusiness.scrollIntoView(value);
+
+        return this;
+    }
 
     public FillFormPage checkFormHeader(String value) {
         formHeaderCostEstimate.shouldHave(text(value));
@@ -57,6 +65,11 @@ public class FillFormPage {
 
     public FillFormPage closePopupWindow() {
         popupWindow.click();
+
+        return this;
+    }
+    public FillFormPage scrollSectionSoftwareSolution(Boolean value) {
+        sectionSoftwareSolution.scrollIntoView(value);
 
         return this;
     }
