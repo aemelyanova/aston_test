@@ -32,14 +32,16 @@ public class FillFormAston extends TestBase {
         });
 
         step("Навести мышку на раздел 'Услуги'", () -> {
-           fillFormPage.hoverService();
+            astonPage.hoverServiceButton();
+           //fillFormPage.hoverService();
        });
 
         step("Кликнуть на 'Выделенная команда'", () -> {
-            $(byTagAndText("tabindex", "Услуги")).hover();
-          //  fillFormPage.clickAndCheckTextTeam();
+            astonPage.hoverServiceButton();
+           // $(byTagAndText("tabindex", "Услуги")).hover();
+            fillFormPage.clickAndCheckTextTeam();
           //  $(byTagAndText("a", "Выделенная команда")).click();
-          //  fillFormPage.clickAndCheckTextTeam("Выделенная команда");
+            //fillFormPage.clickAndCheckTextTeam("Выделенная команда");
         });
 
         step("Скролл до раздела 'Выберите отрасль бизнеса'", () -> {
