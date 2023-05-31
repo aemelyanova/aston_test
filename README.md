@@ -106,3 +106,27 @@ ___
 <img title="Allure Graphics" src="images/screen/allure_graphs.png" width="850">  
 <img title="Allure Graphics" src="images/screen/allure_graphs1.png" width="850">  
 </p>
+
+___
+
+## <img alt="Allure" height="25" src="images/logo/Allure2.svg" width="25"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/2489/dashboards">Allure TestOps</a>
+____
+### *Allure TestOps Dashboard*
+
+<p align="center">  
+<img title="Allure TestOps Dashboard" src="images/screen/testops_dashboard.png" width="850">  
+</p>  
+
+### *Ручные тест-кейсы*
+
+<p align="center">  
+<img title="Allure Tests" src="images/screen/testops_manual.png" width="850">  
+</p>
+
+### *Авто тест-кейсы*
+
+<p align="center">  
+<img title="Allure TestOps Tests" src="images/screen/testops_auto.png" width="850">  
+</p>
+
+___
