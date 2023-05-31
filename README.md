@@ -103,6 +103,6 @@ ___
 ### *Графики*
 
   <p align="center">  
-<img title="Allure Graphics" src="images/screen/allure_graphs.bmp" width="850">  
-<img title="Allure Graphics" src="images/screen/graphs_graphs1.png" width="850">  
+<img title="Allure Graphics" src="images/screen/allure_graphs.png" width="850">  
+<img title="Allure Graphics" src="images/screen/allure_graphs1.png" width="850">  
 </p>
