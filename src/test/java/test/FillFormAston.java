@@ -36,7 +36,8 @@ public class FillFormAston extends TestBase {
        });
 
         step("Кликнуть на 'Выделенная команда'", () -> {
-            fillFormPage.clickAndCheckTextTeam();
+            $(byTagAndText("tabindex", "Услуги")).hover();
+          //  fillFormPage.clickAndCheckTextTeam();
           //  $(byTagAndText("a", "Выделенная команда")).click();
           //  fillFormPage.clickAndCheckTextTeam("Выделенная команда");
         });
