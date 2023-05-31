@@ -13,7 +13,7 @@ public class FillFormPage {
      SelenideElement
          //   headerModule = $("#gatsby-focus-wrapper"),
             sectionService = $("[tabindex=Услуги]"),
-            titleAndTextTeam = $("#gatsby-focus-wrapper"),
+            titleAndTextTeam = $(".SubMenu-module--visible--joh99"),
             sectionIndustryBusiness = $(byTagAndText("p", "Выберите отрасль бизнеса, наиболее подходящую для вашего проекта")),
             sectionSoftwareSolution = $(byTagAndText("p", "Какой тип программного решения вы хотели бы разработать?")),
         //    formHeaderCostEstimate = $(".Calculator-module--wrapper--gk5WR"),
