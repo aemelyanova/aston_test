@@ -22,7 +22,7 @@ public class AstonPage {
 
 
     public AstonPage openPage() {
-        open("https://astondevs.ru/");
+        open("");
 
         return this;
     }

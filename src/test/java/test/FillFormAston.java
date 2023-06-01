@@ -1,6 +1,5 @@
 package test;
 
-import data.SoftwareSolution;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -16,7 +15,7 @@ import static io.qameta.allure.Allure.step;
 public class FillFormAston extends TestBase {
 
     String industry = randomUtils.getRandomIndustry();
-    SoftwareSolution softwareSolution = randomUtils.getRandomSoftwareSolution();
+    String softwareSolution = randomUtils.getRandomSoftwareSolution();
 
     @Owner("aemelyanova")
     @Severity(SeverityLevel.BLOCKER)
@@ -75,7 +74,7 @@ public class FillFormAston extends TestBase {
 
         step("Проверка формы. Отображение введённых данных", () -> {
             fillFormPage.checkDataIndustryResultModal(industry);
-            fillFormPage.checkDataSoftwareSolutionResultModal(softwareSolution.toString());
+            fillFormPage.checkDataSoftwareSolutionResultModal(softwareSolution);
         });
     }
 }

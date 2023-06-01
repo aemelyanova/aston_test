@@ -1,7 +1,6 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import data.SoftwareSolution;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byTagAndText;
@@ -52,8 +51,8 @@ public class FillFormPage {
         return this;
     }
 
-    public FillFormPage chooseTypeOfSoftwareSolution(SoftwareSolution value) {
-        sectorForm.$(byText(value.toString())).click();
+    public FillFormPage chooseTypeOfSoftwareSolution(String value) {
+        sectorForm.$(byText(value)).click();
 
         return this;
     }

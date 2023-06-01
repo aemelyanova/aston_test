@@ -1,7 +1,6 @@
 package utils;
 
 import com.github.javafaker.Faker;
-import data.SoftwareSolution;
 
 public class RandomUtils {
     private Faker faker = new Faker();
@@ -11,12 +10,15 @@ public class RandomUtils {
             "Телекоммуникации", "Нефть и газ", "eCommerce", "Юриспруденция", "Ритейл",
             "Охрана здоровья", "Туризм и гостиничный бизнес", "Авиастроение", "Прочее"
     };
+    String[] software = {
+            "Desktop", "Mobile", "Web", "Необходима консультация"
+    };
 
     public String getRandomIndustry() {
         return faker.options().option(ind);
     }
 
-    public SoftwareSolution getRandomSoftwareSolution() {
-        return faker.options().option(SoftwareSolution.values());
+    public String getRandomSoftwareSolution() {
+        return faker.options().option(software);
     }
 }
